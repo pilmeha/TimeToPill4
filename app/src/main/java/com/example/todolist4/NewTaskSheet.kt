@@ -19,7 +19,7 @@ class NewTaskSheet(var taskItem: TaskItem?) : BottomSheetDialogFragment()
         super.onViewCreated(view, savedInstanceState)
         val activity = requireActivity()
 
-        if (taskItem == null) {
+        if (taskItem != null) {
             binding.taskTitle.text = "Edit Task"
             val editable = Editable.Factory.getInstance()
             binding.name.text = editable.newEditable(taskItem!!.name)
