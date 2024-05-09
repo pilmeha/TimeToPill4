@@ -16,7 +16,7 @@ class NewTaskSheet(var taskItem: TaskItem?) : BottomSheetDialogFragment()
 {
     private  lateinit var binding: FragmentNewTaskSheetBinding
     private lateinit var taskViewModel: TaskViewModel
-    private var dueTIme: LocalTime? = null
+    private var dueTime: LocalTime? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -28,8 +28,8 @@ class NewTaskSheet(var taskItem: TaskItem?) : BottomSheetDialogFragment()
             val editable = Editable.Factory.getInstance()
             binding.name.text = editable.newEditable(taskItem!!.name)
             binding.desc.text = editable.newEditable(taskItem!!.desc)
-            if (taskItem!!.dueTime != null){
-                dueTIme = taskItem!!.dueTime!!
+            if (taskItem!!.dueTime() != null){
+                dueTime = taskItem!!.dueTime()!!
                 updateTimeButtonText()
             }
 
@@ -50,19 +50,19 @@ class NewTaskSheet(var taskItem: TaskItem?) : BottomSheetDialogFragment()
     }
 
     private fun openTimePicker() {
-        if (dueTIme == null)
-            dueTIme = LocalTime.now()
+        if (dueTime == null)
+            dueTime = LocalTime.now()
         val listener = TimePickerDialog.OnTimeSetListener{ _, selectedHour, selectedMinute ->
-            dueTIme = LocalTime.of(selectedHour, selectedMinute)
+            dueTime = LocalTime.of(selectedHour, selectedMinute)
             updateTimeButtonText()
         }
-        val dialog = TimePickerDialog(activity, listener, dueTIme!!.hour, dueTIme!!.minute, true)
+        val dialog = TimePickerDialog(activity, listener, dueTime!!.hour, dueTime!!.minute, true)
         dialog.setTitle("Task Due")
         dialog.show()
     }
 
     private fun updateTimeButtonText() {
-        binding.timePickerButton.text = String.format("%02d:%02d", dueTIme!!.hour, dueTIme!!.minute)
+        binding.timePickerButton.text = String.format("%02d:%02d", dueTime!!.hour, dueTime!!.minute)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
@@ -75,14 +75,18 @@ class NewTaskSheet(var taskItem: TaskItem?) : BottomSheetDialogFragment()
     {
         val name = binding.name.text.toString()
         val desc = binding.desc.text.toString()
-
+        val dueTimeString = if(dueTime == null) null
+            else TaskItem.timeFormatter.format(dueTime)
         if (taskItem == null) {
-            val newTask = TaskItem(name, desc, dueTIme, null)
+            val newTask = TaskItem(name, desc, dueTimeString, null)
             taskViewModel.addTaskItem(newTask)
         }
 
         else {
-            taskViewModel.updateTaskItem(taskItem!!.id, name, desc, dueTIme)
+            taskItem!!.name = name
+            taskItem!!.desc = desc
+            taskItem!!.dueTimeString = dueTimeString
+            taskViewModel.updateTaskItem(taskItem!!)
         }
         binding.name.setText("")
         binding.desc.setText("")
