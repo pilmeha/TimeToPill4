@@ -16,9 +16,13 @@ class TaskItemViewHolder(
     fun bindTaskItem(taskItem: TaskItem){
         binding.name.text = taskItem.name
 
-        if (taskItem.isCompleted()){
+        if (taskItem.isCompleted){
             binding.name.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
             binding.dueTime.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+        }
+        else{
+            binding.name.paintFlags.inv()
+            binding.dueTime.paintFlags.inv()
         }
 
         binding.completeButton.setImageResource(taskItem.imageResource())

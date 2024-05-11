@@ -24,8 +24,9 @@ class TaskViewModel(private val repository: TaskItemRepository): ViewModel()
     }
 
     fun setCompleted(taskItem: TaskItem) = viewModelScope.launch {
-        if (!taskItem.isCompleted())
-            taskItem.completedDateString = TaskItem.dateFormatter.format(LocalDate.now())
+        //if (!taskItem.isCompleted)
+        taskItem.isCompleted = !taskItem.isCompleted
+            //taskItem.completedDateString = TaskItem.dateFormatter.format(LocalDate.now())
         repository.updateTaskItem(taskItem)
     }
 
