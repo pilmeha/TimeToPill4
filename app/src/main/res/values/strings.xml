@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TodoList4</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="place_holder">Place Holder</string>
+    <string name="checkbox">CheckBox</string>
+    <string name="new_task">New Task</string>
+    <string name="to_delete_task">to_delete_task</string>
+</resources>
