@@ -50,6 +50,7 @@
             android:layout_gravity="center"
             android:contentDescription="@string/to_delete_task"
             android:hapticFeedbackEnabled="false"
+            android:backgroundTint="@android:color/transparent"
             app:srcCompat="@android:drawable/ic_menu_delete" />
 
     </LinearLayout>
