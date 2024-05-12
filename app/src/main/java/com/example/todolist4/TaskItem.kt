@@ -8,7 +8,6 @@ import androidx.room.PrimaryKey
 import java.time.LocalDate
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
-import java.util.UUID
 
 @Entity(tableName = "task_item_table")
 class TaskItem(

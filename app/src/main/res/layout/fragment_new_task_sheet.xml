@@ -28,9 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/name"
-            android:hint="@string/name">
-
-        </com.google.android.material.textfield.TextInputEditText>
+            android:hint="@string/name" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -45,19 +43,50 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/desc"
-            android:hint="@string/description">
-
-        </com.google.android.material.textfield.TextInputEditText>
+            android:hint="@string/description" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/timePickerButton"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginHorizontal="20dp"
-        android:text="@string/select_time"/>
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false"
+            android:layout_gravity="center"
+            android:scaleY="0.7"
+            android:scaleX="0.7"
+            android:layout_marginLeft="-30dp"
+            android:layout_marginRight="-30dp"/>
+
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:timePickerMode="spinner"
+            android:layout_gravity="center"
+            android:scaleY="0.7"
+            android:scaleX="0.7"
+            android:layout_marginLeft="-30dp"
+            android:layout_marginRight="-30dp"/>
+
+    </LinearLayout>
+
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/timePickerButton"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:text="@string/select_time"/>-->
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/saveButton"
