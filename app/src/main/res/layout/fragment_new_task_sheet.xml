@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/name"
-            android:hint="Name">
+            android:hint="@string/name">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -45,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/desc"
-            android:hint="Description">
+            android:hint="@string/description">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginHorizontal="20dp"
-        android:text="Select Time"/>
+        android:text="@string/select_time"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/saveButton"
@@ -67,6 +67,6 @@
         android:layout_marginHorizontal="20dp"
         android:backgroundTint="?attr/colorPrimary"
         android:textColor="?colorOnPrimary"
-        android:text="Save"/>
+        android:text="@string/save"/>
 
 </LinearLayout>
