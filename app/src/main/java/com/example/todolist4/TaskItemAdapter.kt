@@ -21,5 +21,4 @@ class TaskItemAdapter(
     override fun onBindViewHolder(holder: TaskItemViewHolder, position: Int) {
         holder.bindTaskItem(taskItems[position])
     }
-
 }
