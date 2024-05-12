@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import java.time.LocalDate
 
 class TaskViewModel(private val repository: TaskItemRepository): ViewModel()
 {
@@ -20,9 +21,7 @@ class TaskViewModel(private val repository: TaskItemRepository): ViewModel()
     }
 
     fun setCompleted(taskItem: TaskItem) = viewModelScope.launch {
-        //if (!taskItem.isCompleted)
         taskItem.isCompleted = !taskItem.isCompleted
-            //taskItem.completedDateString = TaskItem.dateFormatter.format(LocalDate.now())
         repository.updateTaskItem(taskItem)
     }
 

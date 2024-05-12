@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.todolist4.databinding.FragmentNewTaskSheetBinding
+import com.example.todolist4.databinding.TaskItemCellBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import java.sql.Date
 import java.time.LocalTime
@@ -32,9 +33,10 @@ class NewTaskSheet(var taskItem: TaskItem?) : BottomSheetDialogFragment()
             val editable = Editable.Factory.getInstance()
             binding.name.text = editable.newEditable(taskItem!!.name)
             binding.desc.text = editable.newEditable(taskItem!!.desc)
+
             if (taskItem!!.dueTime() != null){
                 dueTime = taskItem!!.dueTime()!!
-//                updateTimeButtonText()
+
             }
         } else {
             binding.taskTitle.text = "New Task"
@@ -79,6 +81,7 @@ class NewTaskSheet(var taskItem: TaskItem?) : BottomSheetDialogFragment()
 
         val dueTimeString = if(dueTime == null) null
         else TaskItem.timeFormatter.format(dueTime)
+
         if (taskItem == null) {
             val newTask = TaskItem(title, message, dueTimeString, null)
             taskViewModel.addTaskItem(newTask)
