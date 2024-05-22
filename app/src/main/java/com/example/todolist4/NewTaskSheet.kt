@@ -47,10 +47,11 @@ class NewTaskSheet(var taskItem: TaskItem?) : BottomSheetDialogFragment()
         binding.saveButton.setOnClickListener{
             saveAction()
         }
-
+//технические работы
 //        binding.timePickerButton.setOnClickListener{
 //            openTimePicker()
 //        }
+//тут они заканчиваются
     }
 
     private fun saveAction()
@@ -115,17 +116,22 @@ class NewTaskSheet(var taskItem: TaskItem?) : BottomSheetDialogFragment()
 
     private fun getTime(): Long
     {
+        if (dueTime == null)
+            dueTime = LocalTime.now()
+
         val minute = binding.timePicker.minute
         val hour = binding.timePicker.hour
         val day = binding.datePicker.dayOfMonth
         val month = binding.datePicker.month
         val year = binding.datePicker.year
 
+        dueTime = LocalTime.of(hour, minute)
+
         val calendar = Calendar.getInstance()
         calendar.set(year, month, day, hour, minute)
         return calendar.timeInMillis
     }
-
+//провожу тех работы
 //    private fun openTimePicker() {
 //        if (dueTime == null)
 //            dueTime = LocalTime.now()
@@ -141,6 +147,7 @@ class NewTaskSheet(var taskItem: TaskItem?) : BottomSheetDialogFragment()
 //    private fun updateTimeButtonText() {
 //        binding.timePickerButton.text = String.format("%02d:%02d", dueTime!!.hour, dueTime!!.minute)
 //    }
+//тут они пока заканчиваетются
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
     {
