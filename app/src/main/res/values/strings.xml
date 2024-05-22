@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Напоминалка</string>
+    <string name="app_name">Будильник для лекарств</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="place_holder">Place Holder</string>
     <string name="checkbox">CheckBox</string>

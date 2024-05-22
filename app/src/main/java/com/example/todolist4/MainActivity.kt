@@ -45,15 +45,13 @@ class MainActivity : AppCompatActivity(), TaskItemClickListener
     }
 
     private fun createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val name = "Канал уведомлений"
-            val desc = "Канал уведомлений для напоминания о приеме лекарства"
-            val importance = NotificationManager.IMPORTANCE_DEFAULT
-            val channel = NotificationChannel(channelID, name, importance)
-            channel.description = desc
-            val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
-            notificationManager.createNotificationChannel(channel)
-        }
+        val name = "Канал уведомлений"
+        val desc = "Канал уведомлений для напоминания о приеме лекарства"
+        val importance = NotificationManager.IMPORTANCE_DEFAULT
+        val channel = NotificationChannel(channelID, name, importance)
+        channel.description = desc
+        val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+        notificationManager.createNotificationChannel(channel)
     }
 
     private fun setRecyclerView() {
