@@ -15,18 +15,15 @@ class TaskItemViewHolder(
     private val timeFormat = DateTimeFormatter.ofPattern("HH:mm")
     fun bindTaskItem(taskItem: TaskItem){
         binding.name.text = taskItem.name
-        //binding.dueDate.text = taskItem.completedDateString.toString()
         binding.dueTime.text = taskItem.dueTimeString.toString()
 
         if (taskItem.isCompleted){
             binding.name.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
             binding.dueTime.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
-            //binding.dueDate.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
         }
         else{
             binding.name.paintFlags.inv()
             binding.dueTime.paintFlags.inv()
-            //binding.dueDate.paintFlags.inv()
         }
 
         binding.completeButton.setImageResource(taskItem.imageResource())
@@ -46,11 +43,9 @@ class TaskItemViewHolder(
 
         if (taskItem.dueTime() != null) {
             binding.dueTime.text = timeFormat.format(taskItem.dueTime())
-            //binding.dueDate.text = ""
         }
         else {
             binding.dueTime.text = "time"
-            //binding.dueDate.text = "date"
         }
     }
 }

@@ -11,7 +11,7 @@
         android:id="@+id/taskTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New Task"
+        android:text="Новый будильник"
         android:textSize="30sp"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
@@ -79,14 +79,6 @@
             android:layout_marginRight="-30dp"/>
 
     </LinearLayout>
-
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:id="@+id/timePickerButton"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:layout_marginHorizontal="20dp"-->
-<!--        android:text="@string/select_time"/>-->
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/saveButton"

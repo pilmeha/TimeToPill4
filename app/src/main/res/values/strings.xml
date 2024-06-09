@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">Напоминалка</string>
+    <string name="app_name">Будильник для лекарств</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="place_holder">Place Holder</string>
     <string name="checkbox">CheckBox</string>
-    <string name="new_task">New Task</string>
+    <string name="new_task">Новое напоминание</string>
     <string name="to_delete_task">to_delete_task</string>
-    <string name="name">Name</string>
-    <string name="description">Description</string>
-    <string name="save">Save</string>
+    <string name="name">Название</string>
+    <string name="description">Комментарий к приему</string>
+    <string name="save">Добавить</string>
     <string name="select_time">Select Time</string>
     <string name="taskDate">task date</string>
     <string name="taskTime">task time</string>
