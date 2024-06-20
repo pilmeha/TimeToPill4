@@ -59,7 +59,7 @@ class NewTaskSheet(var taskItem: TaskItem?) : BottomSheetDialogFragment()
 
         val pendingIntent = PendingIntent.getBroadcast(
             context?.applicationContext,
-            notificationID,
+            title.hashCode(),
             intent,
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
         )
