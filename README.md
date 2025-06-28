@@ -2,7 +2,6 @@
 ## Что это за проект?
 Мобильное приложение, которое отправляет напоминание о приеме лекарств. 
 Наше приложение поможет не пропускать ни одной дозы, что крайне важно для эффективного лечения заболеваний.
-![image](https://github.com/user-attachments/assets/ad010614-8066-4d2c-865c-d38b5f587599)
 ## О команде
 ### Работу выполнила команда Единорожки:
 * Майер Наталья - Тимлид
@@ -17,4 +16,7 @@
 > ![image](https://github.com/user-attachments/assets/f2e62641-83cb-4edf-a810-b55cbf76d817)
 > ![image](https://github.com/user-attachments/assets/fa626ad7-3b0f-4871-9722-dfc74e191d58)
 ### Итоговый проект:
-![Screenshot_AddNotification](https://github.com/user-attachments/assets/974227a4-23a4-497c-af2b-8b8ffc8ebc41)
+> ![Screenshot_AddNotification](https://github.com/user-attachments/assets/c6fecf07-0023-4ca7-8d1d-59148dd50035)
+> ![Screenshot_listNotification](https://github.com/user-attachments/assets/ea4074ed-81d3-4dbe-a1a5-fff6e53734ec)
+> ![Screenshot_notification](https://github.com/user-attachments/assets/8bc0508d-cc7a-4e79-a0b1-54f161a3faeb)
+> ![Screenshot_NotificationBook](https://github.com/user-attachments/assets/e50550e4-2672-41dd-b0f3-69a63b9e3e82)
